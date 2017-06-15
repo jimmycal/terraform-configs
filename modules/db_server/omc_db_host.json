@@ -1,0 +1,39 @@
+{
+    "entities":
+        [                {
+                        "name": "omc-db.internal1.corp.oraclevcn.com",
+                        "type": "omc_host_linux",
+                        "properties":{
+                                "capability": {
+                                "displayName": "capability",
+                                "value": "monitoring"
+                             }
+                        }
+                },
+                {
+              		"name": "omc-db.internal1.corp.oraclevcn.com",
+              		"type": "omc_oracle_db",
+              		"displayName": "BMC_DBaaS",
+              		"timezoneRegion": "EST",
+              		"credentialRefs": ["SQLCreds"],
+              		"properties": {
+              			"host_name": {
+              				"displayName": "host_name",
+              				"value": "omc-db.internal1.corp.oraclevcn.com"
+              			},
+              			"port": {
+              				"displayName": "port",
+              				"value": "1521"
+              			},
+              			"sid": {
+              				"displayName": "service_name",
+              				"value": "Demo_phx1h6.internal1.corp.oraclevcn.com"
+              			},
+              			"capability": {
+              				"displayName": "capability",
+              				"value": "monitoring"
+              			}
+              		}
+              	}
+        ]
+}

@@ -1,7 +1,7 @@
 resource "baremetal_core_instance" "bastion" {
   availability_domain = "${lookup(module.bmc_resources.ads[var.ad - 1],"name")}"
   compartment_id = "${lookup(module.bmc_resources.compartments, var.compartment_name)}"
-  display_name = "${var.identifier}-bastion"
+  display_name = "${var.identifier} Dev Bastion"
   image = "${lookup(module.bmc_resources.images, var.image_name)}"
   shape = "${var.shape_name}"
   subnet_id = "${baremetal_core_subnet.bastion-subnet.id}"
@@ -16,7 +16,7 @@ module "tomcat-server" {
   source = "../modules/tomcat-server"
   compartment_name =  "${lookup(module.bmc_resources.compartments, var.compartment_name)}"
   ad_name = "${lookup(module.bmc_resources.ads[var.ad - 1],"name")}"
-  hostname = "${var.identifier}-dev-tomcat"
+  hostname = "${var.identifier}-tomcat"
   server_display_name = "${var.identifier} Dev Tomcat"
   shape_name = "${var.shape_name}"
   subnet_name = "${baremetal_core_subnet.app-subnet-1.id}"

@@ -1,58 +1,73 @@
-
-#Instance Provisioning Variables
 variable "compartment_name" {
- description = "Compartment to access the server"
+  description = "Compartment to run server in"
 }
 
-variable "public_key" {
- description = "Public key to access the server"
+variable "region" {
+  description = "Region Deployment"
 }
 
-variable "shape" {
-  description = "BMC shape OCID"
+#SSH access to the server
+variable "ssh_public_key" {
+  description = "Public key to load onto a server during creation to allow for OPC user ssh access"
+}
+
+variable "ssh_private_key" {
+  description = "Private key for terraform to use to ssh to the server for post creation instance configuration"
+}
+
+variable "shape_name" {
+  description = "BMC Shape IDs"
 }
 
 variable "ad_name" {
-  description = "Availability Domain to run the server"
+  description = "BMC Availability Domains"
 }
 
 variable "subnet_name" {
-  description = "Subnet to run the server in"
+  description = "Network Subnets"
 }
 
 variable "server_display_name" {
   description = "Server Name"
 }
 
-#Instance Configuration Variables
+variable "hostname" {
+  description = "Server hostname label"
+}
+
+
 variable "manage_with_omc" {
   description = "Manage Server with OMC flag"
 }
+
+variable "cloud_init_file" {
+  description = "User provided Cloud Init"
+  default = ""
+}
+
+variable "bastion_host" {
+  description = "Bastion Host Public IP"
+  default = ""
+}
+variable "bastion_ssh_private_key" {
+  description = "Path to Private Key to access bastion"
+  default = ""
+}
+
+#Chef Configuration Variables
+variable "chef_user" {
+  description = "User name to access your Chef server"
+}
+variable "chef_key" {
+  description = "Path to Private Key for your chef_user to access Chef server"
+}
+
+variable "chef_node_name" {
+  description = "Chef Server Node Name, must be unique"
+}
+
 
 variable "customer" {
   description = "Chef DB configuration variable"
 }
 
-variable "bastion_host" {
-  description = "Host public IP to gain SSH access to this instance"
-  default = ""
-}
-
-variable "devops_key" {
-  description = "Private Key path to access the server"
-  default = ""
-}
-
-variable "bastion_private_key_path" {
-  description = "Path to Private Key to access bastion"
-  default = ""
-}
-
-variable "chef_key" {
-  description = "Path to Private Key to access chef server"
-  default = ""
-}
-
-variable "region" {
-  description = "Region Deployment"
-}

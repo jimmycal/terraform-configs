@@ -1,0 +1,31 @@
+#cloud-config
+# vim: syntax=yaml
+#
+
+write_files:
+-   encoding: b64
+    content: W21vbmdvZGItb3JnLTMuMl0NCm5hbWU9TW9uZ29EQiBSZXBvc2l0b3J5DQpiYXNldXJsPWh0dHBzOi8vcmVwby5tb25nb2RiLm9yZy95dW0vcmVkaGF0LyRyZWxlYXNldmVyL21vbmdvZGItb3JnLzMuMi94ODZfNjQvDQpncGdjaGVjaz0wDQplbmFibGVkPTE=
+    owner: root:root
+    path: /etc/yum.repos.d/mongodb-org-3.2.repo
+    permissions: '0664'
+
+packages:
+ - mongodb-org
+ - mongodb-org-server
+ - gcc
+ - gcc-c++
+ - wget
+ - git
+
+runcmd:
+  - [ sh, -xc, "systemctl stop firewalld && systemctl disable firewalld" ]
+  - [ sh, -xc, "service mongod start" ]
+  - [ sh, -xc, "curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -" ]
+  - [ sh, -xc, "yum install -y nodejs" ]
+  - [ sh, -xc, "npm install -g bower" ]
+  - [ sh, -xc, "npm install -g gulp" ]
+  - [ sh, -xc, "git clone https://github.com/meanjs/mean.git meanjs" ]
+  - [ sh, -xc, "cd ./meanjs && npm install" ]
+  - [ sh, -xc, "cd ./meanjs && bower --allow-root --config.interactive=false install" ]
+  - [ sh, -xc, "cd ./meanjs && gulp" ]
+  - [ sh, -xc, "touch /tmp/signal"]

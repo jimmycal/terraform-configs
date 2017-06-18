@@ -1,0 +1,23 @@
+#cloud-config
+# vim: syntax=yaml
+#
+
+#write_files:
+
+#groups:
+
+# Add users to the system. Users are added after groups are added.
+#users:
+
+package_upgrade: false
+
+packages:
+ - docker-engine
+
+runcmd:
+  - [ sh, -xc, "sudo systemctl start docker" ]
+  - [ sh, -xc, "sudo systemctl enable docker" ]
+  - [ sh, -xc, "sudo ln -s '/etc/systemd/system/docker.service' \ '/etc/systemd/system/multi-user.target.wants/docker.service'" ]
+  - [ sh, -xc, "sudo iptables -I INPUT -p tcp --dport 7001 -j ACCEPT" ]
+  - [ sh, -xc, "sudo docker run -d -p 7001:80 golucky5/pacman" ]
+  - [ sh, -xc, "touch /tmp/signal"]

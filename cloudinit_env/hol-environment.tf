@@ -19,7 +19,7 @@ resource "baremetal_core_instance" "hol-server" {
       host = "${baremetal_core_instance.hol-server.public_ip}"
       type = "ssh"
       user = "opc"
-      private_key =  "${file(var.private_key_path)}"
+      private_key =  "${file(var.ssh_private_key)}"
     }
   }
 }

@@ -8,15 +8,10 @@ server_display_name = "App"
 hostname = "tf-app"
 shape_name = "VM.Standard1.2"
 
-#Chef Configuration Variables
-chef_node_name = "jenkins_dev_tomcat"
-chef_key = "/var/lib/jenkins/.chef/jcalise.pem"
-chef_server = "https://api.chef.io/organizations/bmc_devops"
-chef_user = "jcalise"
-
 #Environment Specific Variables
 identifier = "jenkins"
-manage_with_omc = false
+scale = 1
+cloud_init_file = "./cloud-init/meanjs.yaml"
 
 #SSH Access
 ssh_private_key = "/var/lib/jenkins/.ssh/id_jim_rsa"

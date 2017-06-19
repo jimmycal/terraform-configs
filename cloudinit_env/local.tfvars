@@ -9,7 +9,7 @@ shape_name = "VM.Standard1.2"
 #Environment Specific Variables
 identifier = "local"
 scale = 1
-cloud_init_file = "./cloud-init/hol-cloudinit.yaml"
+cloud_init_file = "./cloud-init/meanjs.yaml"
 
 #SSH Access
 ssh_private_key = "~/.ssh/id_rsa"

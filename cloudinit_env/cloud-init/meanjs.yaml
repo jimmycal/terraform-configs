@@ -27,5 +27,6 @@ runcmd:
   - [ sh, -xc, "git clone https://github.com/meanjs/mean.git meanjs" ]
   - [ sh, -xc, "cd ./meanjs && npm install" ]
   - [ sh, -xc, "cd ./meanjs && bower --allow-root --config.interactive=false install" ]
-  - [ sh, -xc, "cd ./meanjs && gulp" ]
   - [ sh, -xc, "touch /tmp/signal"]
+  - [ sh, -xc, "cd ./meanjs && gulp" ]
+

@@ -9,7 +9,7 @@ shape_name = "VM.Standard1.2"
 #Environment Specific Variables
 identifier = "jenkins"
 scale = 1
-cloud_init_file = "cloud-init/meanjs.yaml"
+cloud_init_file = "meanjs.yaml"
 
 #SSH Access
 ssh_private_key = "/var/lib/jenkins/.ssh/id_jim_rsa"

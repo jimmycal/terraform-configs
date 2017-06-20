@@ -1,4 +1,4 @@
-resource "baremetal_core_instance" "hol-server" {
+resource "baremetal_core_instance" "ci-server" {
   count = "${var.scale}"
   availability_domain = "${lookup(module.bmc_resources.ads[var.ad - 1],"name")}"
   compartment_id = "${lookup(module.bmc_resources.compartments, var.compartment_name)}"
@@ -16,7 +16,7 @@ resource "baremetal_core_instance" "hol-server" {
       "while [ ! -f /tmp/signal ]; do sleep 2; done"
     ]
     connection {
-      host = "${baremetal_core_instance.hol-server.public_ip}"
+      host = "${self.public_ip}"
       type = "ssh"
       user = "opc"
       private_key =  "${file(var.ssh_private_key)}"

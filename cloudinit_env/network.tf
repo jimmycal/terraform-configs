@@ -1,7 +1,7 @@
 resource "baremetal_core_virtual_network" "vcn" {
   cidr_block = "10.0.0.0/16"
   compartment_id = "${lookup(module.bmc_resources.compartments, var.compartment_name)}"
-  display_name = "${var.identifier}-hol-network"
+  display_name = "${var.identifier}-ci-network"
   dns_label = "${var.identifier}"
 }
 

@@ -8,7 +8,7 @@ shape_name = "VM.Standard1.2"
 
 #Environment Specific Variables
 identifier = "local"
-scale = 1
+scale = 2
 cloud_init_file = "meanjs.yaml"
 
 #SSH Access

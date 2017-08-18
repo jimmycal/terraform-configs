@@ -1,8 +1,3 @@
-module "bmc_resources" {
-  source = "modules/datasources"
-  tenancy_ocid = "${var.tenancy_ocid}"
-}
-
 resource "baremetal_core_instance" "instance" {
   count = "${var.compute_scale}"
   availability_domain = "${lookup(module.bmc_resources.ads[var.ad - 1],"name")}"
@@ -11,7 +6,7 @@ resource "baremetal_core_instance" "instance" {
   image = "${lookup(module.bmc_resources.images, var.image_name)}"
   shape = "${var.shape_name}"
   subnet_id = "${baremetal_core_subnet.app-subnet-1.id}"
- # hostname_label = "${var.hostname}-${count.index}"
+  # hostname_label = "${var.hostname}-${count.index}"
   metadata {
     ssh_authorized_keys = "${file(var.ssh_public_key)}"
   }

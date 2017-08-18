@@ -9,7 +9,7 @@ hostname = "tf-app"
 shape_name = "VM.Standard1.2"
 
 #Chef Configuration Variables
-chef_node_name = "tf_app_node"
+chef_node_name = "tf_weblogic_node"
 chef_key = "/Users/jcalise/.chef/jcalise.pem"
 chef_server = "https://api.chef.io/organizations/bmc_devops"
 chef_user = "jcalise"

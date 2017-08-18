@@ -55,15 +55,6 @@ variable "chef_node_name" {
   description = "Chef Server Node Name, must be unique"
 }
 
-variable "json_attributes" {
-  description = "Path Chef recipe configuration attributes file"
-}
-
-variable "chef_recipes" {
-  description = "List of recipes for Chef to run"
-  type = "list"
-}
-
 variable "chef_server" {
   description = "URL for your chef server"
 }

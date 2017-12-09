@@ -60,7 +60,7 @@ resource "null_resource" "server_instance_config"{
     user_key = "${file(var.chef_key)}"
     recreate_client = true
     connection {
-      host = "${baremetal_core_instance.tomcat-server.private_ip}"
+      host = "${oci_core_instance.tomcat-server.private_ip}"
       type = "ssh"
       user = "opc"
       private_key = "${file(var.ssh_private_key)}"

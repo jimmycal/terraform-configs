@@ -1,4 +1,4 @@
-resource "baremetal_core_instance" "mysql-server" {
+resource "oci_core_instance" "mysql-server" {
   availability_domain = "${var.ad_name}"
   compartment_id = "${var.compartment_name}"
   display_name = "${var.server_display_name}"
@@ -28,7 +28,7 @@ resource "baremetal_core_instance" "mysql-server" {
     user_key = "${file(var.chef_key)}"
     recreate_client = true
     connection {
-      host = "${baremetal_core_instance.mysql-server.private_ip}"
+      host = "${oci_core_instance.mysql-server.private_ip}"
       type = "ssh"
       user = "opc"
       private_key = "${file(var.ssh_private_key)}"

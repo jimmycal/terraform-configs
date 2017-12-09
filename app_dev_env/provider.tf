@@ -1,4 +1,4 @@
-provider "baremetal" {
+provider "oci" {
   tenancy_ocid         = "${var.tenancy_ocid}"
   user_ocid            = "${var.user_ocid}"
   fingerprint          = "${var.fingerprint}"
@@ -6,7 +6,7 @@ provider "baremetal" {
   region               = "${var.region}"
 }
 
-module "bmc_resources" {
+module "oci_resources" {
   source = "../modules/datasources"
   tenancy_ocid = "${var.tenancy_ocid}"
 }

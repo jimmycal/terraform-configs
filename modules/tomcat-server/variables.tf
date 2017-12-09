@@ -2,7 +2,6 @@ variable "compartment_name" {
   description = "Compartment to run server in"
 }
 
-
 variable "region" {
   description = "Region Deployment"
 }

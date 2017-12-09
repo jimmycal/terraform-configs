@@ -1,5 +1,5 @@
 
-resource "baremetal_core_instance" "tomcat-server" {
+resource "oci_core_instance" "tomcat-server" {
   availability_domain = "${var.ad_name}"
   compartment_id = "${var.compartment_name}"
   display_name = "${var.server_display_name}"
@@ -37,7 +37,7 @@ resource "null_resource" "manager_server_instance_config"{
           user_key = "${file(var.chef_key)}"
           recreate_client = true
           connection {
-            host = "${baremetal_core_instance.tomcat-server.private_ip}"
+            host = "${oci_core_instance.tomcat-server.private_ip}"
             type = "ssh"
             user = "opc"
             private_key = "${file(var.ssh_private_key)}"

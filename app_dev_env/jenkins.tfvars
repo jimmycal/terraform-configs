@@ -3,7 +3,7 @@ region = "us-ashburn-1"
 #BMC Instance Variables
 ad = 1
 compartment_name = "DEMO"
-image_name = "Oracle-Linux-7.3-2017.05.23-0"
+image_name = "Oracle-Linux-7.4-2017.11.15-0"
 server_display_name = "App"
 hostname = "tf-app"
 shape_name = "VM.Standard1.2"

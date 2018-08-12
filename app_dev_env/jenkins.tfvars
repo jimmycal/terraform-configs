@@ -10,7 +10,7 @@ shape_name = "VM.Standard1.2"
 
 #Chef Configuration Variables
 chef_node_name = "jenkins_dev_tomcat"
-chef_key = "/var/lib/jenkins/.chef/jcalise.pem"
+chef_key = "/home/opc/keys/.chef/jcalise.pem"
 chef_server = "https://api.chef.io/organizations/bmc_devops"
 chef_user = "jcalise"
 
@@ -19,12 +19,12 @@ identifier = "jenkins"
 manage_with_omc = false
 
 #SSH Access
-ssh_private_key = "/var/lib/jenkins/.ssh/id_jim_rsa"
+ssh_private_key = "/home/opc/keys/.user/id_rsa"
 ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0G5R0I21xfA0PyCFOI+TCRqSGtuEbAO9c7zRsE652jQ/LDGLS6uCL+U3eB4+e8FnnRF3A1IB9jPO7pLvhbL9nlD2PbOwqmWMp4W3a8xyjjHEcTaQ9Hc085GDtUki6hyW4+jtJ3GdK5Wp7liH438tND6EAdVeUcrt07/o99eKeDjtTd6R5AeL08JPW7OuEYLcYHH2ZkMyu795XuWAIQXeDMfbnLj6gcTgyftVZViGPoELO39Cl7g/JxVXsnNTCVtTa5CRRmaF/mKVcGuj+5fiTafx8CNh/6hkBm2hryBdTcSwGkiZgXs1GkOfmEEkk+61kNJbpHSo0FiBz1h4B91zD jamescalise@Jamess-MacBook-Pro.local"
 
-fingerprint="0e:4b:20:14:da:29:1a:31:cd:81:b0:ef:87:5e:69:bc"
+fingerprint="dd:6f:5f:68:ce:bb:4c:cf:55:81:d0:2c:0e:7d:c3:08"
 tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaay7s6icq755xqlytpl33i7ysjzzb2kv3vk3itg5ilsxanrzqmsaha"
 user_ocid="ocid1.user.oc1..aaaaaaaabdas4dyl47ie2p3mo5ro7h6dy6drdlvtpzhzaqmwh2cwigvhboma"
-private_key_path="/var/lib/jenkins/.ssh/id_rsa"
+private_key_path="/home/opc/.oci/oci_api_key.pem"
 
 
